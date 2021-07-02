@@ -1,0 +1,18 @@
+{
+    "colours": {
+        "red": "#f78888",
+        "yellow": "#f5c400",
+        "grey": "#ececec",
+        "white": "#ffffff",
+        "azure": "#027fff",
+        "lightBlue": "#90ccf4",
+        "blue": "#5da2d5",
+        "teal": "#049cb7",
+        "black": "#000000"
+    },
+    "width": {
+        "maxWidthDesktop": "1440px",
+        "mobileLimit":  "769px",
+        "regularLimit":  "1024px"
+    }
+}
