@@ -31,6 +31,12 @@ const RemoteEngagement = React.lazy(() =>
   )
 );
 
+const Python = React.lazy(() =>
+  import("./components/pages/outside-projects/python-lal/python-lal")
+);
+
+const RoundUp = React.lazy(() => import("./components/pages/roundup/roundup"));
+
 // const Test = React.lazy(() => import("./components/pages/test/test"));
 
 const history = createBrowserHistory();
@@ -56,6 +62,13 @@ const Routes = () => {
             exact
             component={RemoteEngagement}
           />
+          <Route
+            path="/outside-projects/python-lunch-and-learn"
+            exact
+            component={Python}
+          />
+
+          <Route path="/roundup" exact component={RoundUp} />
           <Route path="/" component={Homepage} />
         </Switch>
       </Router>

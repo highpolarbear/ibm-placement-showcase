@@ -7,7 +7,10 @@ import { LogoImg } from "../../atoms/image/image";
 import { Link } from "react-router-dom";
 import { LinkButtonNoArrow } from "../../atoms/button/button";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  background-color: ${(props) =>
+    props.theme ? props.theme : cssValues.colours.white};
+`;
 
 const ContentWrapper = styled.div`
   position: relative;
@@ -40,40 +43,17 @@ const MenuItem = styled.div`
   transform: translate(0, 50%);
 `;
 
-export const Header = () => {
+export const Header = (props) => {
+  const { theme, textTheme } = props;
   const history = useHistory();
-  // const [isProject, setIsProject] = useState(false);
-  // const [isOtherProj, setIsOtherProj] = useState(false);
-  // const [isReflection, setIsReflection] = useState(false);
   const [path, setPath] = useState(null);
   useEffect(() => {
     const pathname = window.location.pathname.split("/")[1];
-    // switch (path) {
-    //   case "projects":
-    //     setIsProject(true);
-    //     setIsOtherProj(false);
-    //     setIsReflection(false);
-    //     break;
-    //   case "other":
-    //     setIsProject(false);
-    //     setIsOtherProj(true);
-    //     setIsReflection(false);
-    //     break;
-    //   case "reflection":
-    //     setIsProject(false);
-    //     setIsOtherProj(false);
-    //     setIsReflection(true);
-    //     break;
-    //   default:
-    //     setIsProject(false);
-    //     setIsOtherProj(false);
-    //     setIsReflection(false);
-    // }
     setPath(pathname);
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper theme={theme}>
       <ContentWrapper>
         <MenuWrapper>
           <Link to="/">
@@ -82,7 +62,7 @@ export const Header = () => {
           <MenuGroup>
             <MenuItem>
               <LinkButtonNoArrow
-                theme={cssValues.colours.black}
+                theme={textTheme ? textTheme : cssValues.colours.black}
                 text="Projects"
                 onClick={() => {
                   const elem = document.getElementById("projects");
@@ -97,32 +77,27 @@ export const Header = () => {
             </MenuItem>
             <MenuItem>
               <LinkButtonNoArrow
-                theme={cssValues.colours.black}
+                theme={textTheme ? textTheme : cssValues.colours.black}
                 text="Outside Projects"
                 onClick={() => {
-                  const elem = document.getElementById("projects");
+                  const elem = document.getElementById("outside-projects");
                   elem
                     ? elem.scrollIntoView({
                         behavior: "smooth",
                       })
                     : history.push("/#projects");
                 }}
-                active={path === "other"}
+                active={path === "outside-projects"}
               />
             </MenuItem>
             <MenuItem>
               <LinkButtonNoArrow
-                theme={cssValues.colours.black}
-                text="Reflection"
+                theme={textTheme ? textTheme : cssValues.colours.black}
+                text="Roundup"
                 onClick={() => {
-                  const elem = document.getElementById("reflection");
-                  elem
-                    ? elem.scrollIntoView({
-                        behavior: "smooth",
-                      })
-                    : history.push("/#reflection");
+                  history.push("/roundup");
                 }}
-                active={path === "reflection"}
+                active={path === "roundup"}
               />
             </MenuItem>
           </MenuGroup>

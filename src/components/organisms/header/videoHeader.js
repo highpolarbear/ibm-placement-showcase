@@ -143,22 +143,19 @@ export const VideoHeader = () => {
                 theme={cssValues.colours.white}
                 text="Outside Projects"
                 onClick={() => {
-                  document.getElementById("projects").scrollIntoView({
+                  document.getElementById("outside-projects").scrollIntoView({
                     behavior: "smooth",
                   });
                 }}
               />
             </MenuItem>
             <MenuItem>
-              <LinkButtonNoArrow
-                theme={cssValues.colours.white}
-                text="Reflection"
-                onClick={() => {
-                  document.getElementById("reflection").scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-              />
+              <Link to="/roundup" style={{ textDecoration: "none" }}>
+                <LinkButtonNoArrow
+                  theme={cssValues.colours.white}
+                  text="Round-up"
+                />
+              </Link>
             </MenuItem>
           </MenuGroup>
         </MenuWrapper>

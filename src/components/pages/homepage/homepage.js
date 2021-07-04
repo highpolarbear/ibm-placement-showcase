@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  WrapperWithTitleBlock,
-  WrapperWithTitleBlockCenter,
-  RoundWrapper,
-} from "../../organisms/wrapper/contentWrapper";
+import { WrapperWithTitleBlock } from "../../organisms/wrapper/contentWrapper";
 import { VideoHeader } from "../../organisms/header/videoHeader";
 import { CardGroup } from "../../organisms/cardGroup/cardGroup";
 import { BannerText } from "../../atoms/text/text";
@@ -15,9 +11,9 @@ import castrolLogo from "../../../assets/castrol.png";
 import bpLogo from "../../../assets/bplogo.png";
 import hs2Logo from "../../../assets/hs2.png";
 import reLogo from "../../../assets/remote-engagement.png";
+import pythonLogo from "../../../assets/python.png";
 import ibmLogo from "../../../assets/ibmlogo.png";
 import { FullWidthBannerDark } from "../../organisms/wrapper/banner";
-import { LinkButton } from "../../atoms/button/button";
 
 const projectCards = [
   {
@@ -56,14 +52,6 @@ const projectCards = [
 
 const outsideProjectCards = [
   {
-    image: hs2Logo,
-    preTitle: "Hackathon",
-    title: "IBM x HS2 Unite Challenge",
-    subtitle: "Mar 2021",
-    body: "Improves how HS2 recruits professionals.",
-    link: "/outside-projects/hs2-hackathon",
-  },
-  {
     image: reLogo,
     imgSm: true,
     preTitle: "Web App",
@@ -71,6 +59,24 @@ const outsideProjectCards = [
     subtitle: "Jan - Jun 2021",
     body: "Great way to start virtual meetings during the pandemic.",
     link: "/outside-projects/remote-engagement",
+  },
+  {
+    image: pythonLogo,
+    imgSm: true,
+    preTitle: "Skill Share",
+    title: "Python Lunch and Learn",
+    subtitle: "Jan 2021",
+    body: "An introduction to Python programming language.",
+    link: "/outside-projects/python-lunch-and-learn",
+  },
+  {
+    image: hs2Logo,
+    imgSm: true,
+    preTitle: "Hackathon",
+    title: "IBM x HS2 Unite Challenge",
+    subtitle: "Mar 2021",
+    body: "Improves how HS2 recruits professionals.",
+    link: "/outside-projects/hs2-hackathon",
   },
 ];
 
@@ -103,22 +109,6 @@ export const Homepage = () => {
           />
         }
         id="outside-projects"
-      />
-
-      <WrapperWithTitleBlockCenter
-        theme={cssValues.colours.white}
-        backdropTheme={cssValues.colours.teal}
-        title="End of Placement Round-up."
-        subtitle={
-          <div>
-            <div>
-              Reflection is scary, yet the most powerful tool for success.
-            </div>
-            <LinkButton text="Explore" theme={cssValues.colours.white} />
-          </div>
-        }
-        body={<RoundWrapper body={<div>123</div>} />}
-        id="reflection"
       />
 
       <FullWidthBannerDark

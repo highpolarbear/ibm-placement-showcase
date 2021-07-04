@@ -19,6 +19,7 @@ import feedbackIcon from "../../../../assets/feedback.svg";
 import react from "../../../../assets/react.png";
 import mongodb from "../../../../assets/mongodb.png";
 import nodejs from "../../../../assets/nodejs.png";
+import twilio from "../../../../assets/twilio.png";
 import amplify from "../../../../assets/aws-amplify.png";
 import agile from "../../../../assets/agile.svg";
 import analysis from "../../../../assets/analysis.svg";
@@ -63,6 +64,12 @@ const techStack = [
     front: {
       image: nodejs,
       title: "Node.js",
+    },
+  },
+  {
+    front: {
+      image: twilio,
+      title: "Twilio",
     },
   },
   {

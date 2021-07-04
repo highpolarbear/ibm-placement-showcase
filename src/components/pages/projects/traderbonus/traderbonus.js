@@ -79,7 +79,7 @@ const role = [
     front: {
       image: keyboard,
       imgSm: true,
-      title: "PowerApps Developer.",
+      title: "Power Apps Developer.",
     },
     back: {
       body: "I designed and developed a centralised system to collect figures from bp global trading teams, where each team has their tailor-made pages. All done by myself!",

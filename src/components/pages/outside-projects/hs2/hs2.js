@@ -5,20 +5,20 @@ import cssValues from "../../../../cssValues.json";
 import { Header } from "../../../organisms/header/header";
 import {
   WrapperWithTitleBlock,
-  WrapperWithTitleBlockCenter,
-  WrapperBlockSide,
+  WrapperWithTitleBlockSide,
+  WrapperBlockSideLeft,
 } from "../../../organisms/wrapper/contentWrapper";
-import { SideImg } from "../../../atoms/image/image";
-import MacBookWrapper from "../../../organisms/wrapper/macbookWrapper";
-import bppulse from "../../../../assets/bppulse_page.mp4";
-import { BannerImg } from "../../../atoms/image/image";
+import { SideImg, BannerImg, DisplayImg } from "../../../atoms/image/image";
 import { FlipCardGroupThree } from "../../../organisms/cardGroup/cardGroup";
 import { ButtonBlkOnClick } from "../../../atoms/button/button";
 import information from "../../../../assets/information.svg";
-import stack from "../../../../assets/stack.svg";
-import react from "../../../../assets/react.png";
-import ga from "../../../../assets/ga.png";
-import agile from "../../../../assets/agile.svg";
+import journeyIcon from "../../../../assets/journey.svg";
+import team from "../../../../assets/hs2-team.png";
+import cv from "../../../../assets/cv.png";
+import file from "../../../../assets/file.png";
+import call from "../../../../assets/call.png";
+import edt from "../../../../assets/hs2-edt.png";
+import site from "../../../../assets/hs2-site-visit.png";
 
 const Wrapper = styled.div`
   background-color: ${cssValues.colours.grey};
@@ -27,6 +27,7 @@ const Wrapper = styled.div`
 
 const background = [
   {
+    width: 2,
     front: {
       title: `Innovative Solution.`,
       subtitle: `Design an innovative way to improve the diversity & equality of HS2’s recruitment process.`,
@@ -40,26 +41,50 @@ const background = [
   },
 ];
 
-const techStack = [
+const journey = [
+  {
+    height: 30,
+    width: 3,
+    front: {
+      body: (
+        <WrapperBlockSideLeft
+          text="Enterprise Design Thinking"
+          body={<SideImg src={edt} />}
+        />
+      ),
+    },
+  },
   {
     front: {
-      image: react,
+      image: file,
       imgSm: true,
-      title: "React.js",
+      title: "Job ads",
+    },
+  },
+  {
+    front: {
+      image: cv,
+      imgSm: true,
+      title: "CV Screening",
+    },
+  },
+  {
+    front: {
+      image: call,
+      imgSm: true,
+      title: "Interviews",
     },
   },
   {
     height: 30,
     width: 3,
     front: {
-      body: <WrapperBlockSide text="AWS Deployment" body={<SideImg />} />,
-    },
-  },
-  {
-    front: {
-      image: agile,
-      imgSm: true,
-      title: "Agile Methodologies",
+      body: (
+        <WrapperBlockSideLeft
+          text="Winner's Prize: Tunnel Boring Machine Site Visit"
+          body={<SideImg src={site} />}
+        />
+      ),
     },
   },
 ];
@@ -74,7 +99,7 @@ export const Hs2 = () => {
       <Header />
 
       {/* Header Block */}
-      <WrapperWithTitleBlockCenter
+      <WrapperWithTitleBlockSide
         theme={cssValues.colours.black}
         backdropTheme={cssValues.colours.grey}
         title="IBM x HS2 Unite Challenge"
@@ -98,18 +123,14 @@ export const Hs2 = () => {
         body={
           <div>
             <Fade bottom>
-              <MacBookWrapper
-                // video={<source src={bppulse} type="video/mp4" />}
-                width="50%"
-                centered
-              />
+              <DisplayImg src={team} />
             </Fade>
           </div>
         }
       />
 
       <div id="content">
-        {/* Project Background */}
+        {/* Event Details */}
         <WrapperWithTitleBlock
           theme={cssValues.colours.black}
           title={
@@ -121,16 +142,16 @@ export const Hs2 = () => {
           body={<FlipCardGroupThree cards={background} />}
         />
 
-        {/* Tech Stack */}
+        {/* Journey */}
         <WrapperWithTitleBlock
           theme={cssValues.colours.black}
           title={
             <div>
-              <BannerImg src={stack} alt="Stack" />
+              <BannerImg src={journeyIcon} alt="Stack" />
               Our journey.
             </div>
           }
-          body={<FlipCardGroupThree cards={techStack} />}
+          body={<FlipCardGroupThree cards={journey} />}
         />
       </div>
     </Wrapper>

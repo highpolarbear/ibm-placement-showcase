@@ -35,6 +35,15 @@ const FullWidthInnerSideWrapper = styled(FullWidthInnerWrapper)`
   }
 `;
 
+const FullWidthInnerSideWrapperNoPad = styled(FullWidthInnerWrapper)`
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: ${cssValues.width.mobileLimit}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
 const RoundCornerWrapper = styled(Wrapper)`
   background-color: ${cssValues.colours.white};
   border-radius: 1.5rem;
@@ -63,12 +72,38 @@ const TitleWrapper = styled.div`
   @media (max-width: ${cssValues.width.maxWidthDesktop}) {
     padding: 2vw;
   }
-`;
 
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-10vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @media (max-width: ${cssValues.width.mobileLimit}) {
+    margin: 0 5vw;
+  }
+
+  @media (max-width: ${cssValues.width.maxWidthDesktop}) {
+    padding: 2vw;
+  }
+`;
 const TitleSideWrapper = styled(TitleWrapper)`
   @media (min-width: ${cssValues.width.mobileLimit}) {
     position: relative;
     top: 25%;
+  }
+`;
+
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  @media (max-width: ${cssValues.width.mobileLimit}) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -149,27 +184,53 @@ export const WrapperWithTitleBlockSide = (props) => {
   );
 };
 
-export const WrapperBlockSide = (props) => {
+export const WrapperBlockSideLeft = (props) => {
   const { id, text, body, backdropTheme } = props;
 
   return (
     <FullWidthWrapper id={id} theme={backdropTheme}>
-      <FullWidthInnerSideWrapper>
+      <FullWidthInnerSideWrapperNoPad>
         <Fade effect="fadeInLeft">
           <SectionTitleCenter>{text}</SectionTitleCenter>
         </Fade>
+        <div>{body}</div>
+      </FullWidthInnerSideWrapperNoPad>
+    </FullWidthWrapper>
+  );
+};
+
+export const WrapperBlockSideRight = (props) => {
+  const { id, text, body, backdropTheme } = props;
+
+  return (
+    <FullWidthWrapper id={id} theme={backdropTheme}>
+      <FullWidthInnerSideWrapperNoPad>
         {body}
-      </FullWidthInnerSideWrapper>
+        <Fade effect="fadeInRight">
+          <SectionTitleCenter>{text}</SectionTitleCenter>
+        </Fade>
+      </FullWidthInnerSideWrapperNoPad>
     </FullWidthWrapper>
   );
 };
 
 export const RoundWrapper = (props) => {
   const { id, body } = props;
-  console.log(body);
   return (
     <Fade bottom>
       <RoundCornerWrapper id={id}>{body}</RoundCornerWrapper>
     </Fade>
+  );
+};
+
+export const Grid = (props) => {
+  const { content } = props;
+  return (
+    <GridWrapper>
+      {content &&
+        content.map((item) => {
+          return <div>{item}</div>;
+        })}
+    </GridWrapper>
   );
 };

@@ -28,3 +28,11 @@ export const BannerImg = styled.img`
   position: relative;
   user-select: none;
 `;
+
+export const DisplayImg = styled.img`
+  max-width: 50vw;
+  max-height: 100%;
+  margin: 1rem;
+  position: relative;
+  user-select: none;
+`;

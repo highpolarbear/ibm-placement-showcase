@@ -6,7 +6,7 @@ import { Header } from "../../../organisms/header/header";
 import {
   WrapperWithTitleBlock,
   WrapperWithTitleBlockCenter,
-  WrapperBlockSide,
+  WrapperBlockSideLeft,
 } from "../../../organisms/wrapper/contentWrapper";
 import { SideImg } from "../../../atoms/image/image";
 import MacBookWrapper from "../../../organisms/wrapper/macbookWrapper";
@@ -17,7 +17,6 @@ import { ButtonBlkOnClick } from "../../../atoms/button/button";
 import information from "../../../../assets/information.svg";
 import stack from "../../../../assets/stack.svg";
 import feedbackIcon from "../../../../assets/feedback.svg";
-import react from "../../../../assets/react.png";
 import ga from "../../../../assets/ga.png";
 import ec2 from "../../../../assets/aws-ec2.png";
 import mern from "../../../../assets/mern.png";
@@ -64,7 +63,10 @@ const techStack = [
     width: 3,
     front: {
       body: (
-        <WrapperBlockSide text="AWS Deployment" body={<SideImg src={ec2} />} />
+        <WrapperBlockSideLeft
+          text="AWS Deployment"
+          body={<SideImg src={ec2} />}
+        />
       ),
     },
   },
@@ -151,10 +153,9 @@ export const RemoteEngagement = () => {
           title={
             <div>
               <BannerImg src={stack} alt="Stack" />
-              Tech Stack / Ways to Work.
+              Tech Stack
             </div>
           }
-          subtitle="Using the latest technology available in the industry."
           body={<FlipCardGroupThree cards={techStack} />}
         />
 

@@ -55,8 +55,17 @@ export const TitleText = styled.div`
   letter-spacing: 0.1rem;
 `;
 
+export const TitleText2Rem = styled(TitleText)`
+  font-size: 2rem;
+  letter-spacing: unset;
+`;
+
 export const SubtitleText = styled.div`
   font-size: 1.5rem;
+`;
+
+export const SubtitleText125Rem = styled.div`
+  font-size: 1.25rem;
 `;
 
 export const BodyText = styled.div`
