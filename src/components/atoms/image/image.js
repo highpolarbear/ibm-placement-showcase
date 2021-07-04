@@ -9,6 +9,10 @@ export const InlineImg = styled.img`
   }
 `;
 
+export const SideImg = styled.img`
+  height: calc(45vh);
+`;
+
 export const LogoImg = styled.img`
   display: inline-block;
   height: 4rem;

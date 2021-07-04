@@ -62,6 +62,7 @@ export const FlipCardGroupThree = (props) => {
         return (
           <FlipCard
             width={card.width}
+            height={card.height}
             theme={theme && theme}
             front={card.front && card.front}
             back={card.back && card.back}

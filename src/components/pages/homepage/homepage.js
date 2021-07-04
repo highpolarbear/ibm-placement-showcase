@@ -13,6 +13,8 @@ import cssValues from "../../../cssValues.json";
 import bpPulseLogo from "../../../assets/bppulse.png";
 import castrolLogo from "../../../assets/castrol.png";
 import bpLogo from "../../../assets/bplogo.png";
+import hs2Logo from "../../../assets/hs2.png";
+import reLogo from "../../../assets/remote-engagement.png";
 import ibmLogo from "../../../assets/ibmlogo.png";
 import { FullWidthBannerDark } from "../../organisms/wrapper/banner";
 import { LinkButton } from "../../atoms/button/button";
@@ -47,8 +49,28 @@ const projectCards = [
     preTitle: "Data & Artificial Intelligence",
     title: "bp Energy on Water",
     subtitle: "Apr 2021, May 2021 - Jul 2021",
-    body: "A web app to remind customers to get their vehicles serviced.",
+    body: "Provide a timely view of current vessels on water with bp cargo.",
     link: "/projects/eow",
+  },
+];
+
+const outsideProjectCards = [
+  {
+    image: hs2Logo,
+    preTitle: "Hackathon",
+    title: "IBM x HS2 Unite Challenge",
+    subtitle: "Mar 2021",
+    body: "Improves how HS2 recruits professionals.",
+    link: "/outside-projects/hs2-hackathon",
+  },
+  {
+    image: reLogo,
+    imgSm: true,
+    preTitle: "Web App",
+    title: "Remote Team Engagement",
+    subtitle: "Jan - Jun 2021",
+    body: "Great way to start virtual meetings during the pandemic.",
+    link: "/outside-projects/remote-engagement",
   },
 ];
 
@@ -70,16 +92,29 @@ export const Homepage = () => {
         id="projects"
       />
 
+      <WrapperWithTitleBlock
+        theme={cssValues.colours.purple}
+        // backdropTheme={cssValues.colours.white}
+        title="Outside Projects."
+        body={
+          <CardGroup
+            theme={cssValues.colours.purple}
+            cards={outsideProjectCards}
+          />
+        }
+        id="outside-projects"
+      />
+
       <WrapperWithTitleBlockCenter
         theme={cssValues.colours.white}
         backdropTheme={cssValues.colours.teal}
-        title="Reflection."
+        title="End of Placement Round-up."
         subtitle={
           <div>
             <div>
               Reflection is scary, yet the most powerful tool for success.
             </div>
-            <LinkButton text="Explore" />
+            <LinkButton text="Explore" theme={cssValues.colours.white} />
           </div>
         }
         body={<RoundWrapper body={<div>123</div>} />}

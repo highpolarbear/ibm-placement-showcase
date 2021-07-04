@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 import cssValues from "../../../../cssValues.json";
 import { Header } from "../../../organisms/header/header";
 import {
   WrapperWithTitleBlock,
   WrapperWithTitleBlockCenter,
 } from "../../../organisms/wrapper/contentWrapper";
-import MacBookWrapper from "../../../organisms/wrapper/macbookWrapper";
-import traderBonus from "../../../../assets/trader-bonus.jpg";
 import { ButtonBlkOnClick } from "../../../atoms/button/button";
 import { FlipCardGroupThree } from "../../../organisms/cardGroup/cardGroup";
 import { BannerImg } from "../../../atoms/image/image";
@@ -16,10 +13,9 @@ import information from "../../../../assets/information.svg";
 import human from "../../../../assets/human.svg";
 import stack from "../../../../assets/stack.svg";
 import feedbackIcon from "../../../../assets/feedback.svg";
-import dataiku from "../../../../assets/dataiku.png";
-import powerapps from "../../../../assets/powerapps.png";
+import adf from "../../../../assets/adf.png";
 import powerbi from "../../../../assets/powerbi.png";
-import keyboard from "../../../../assets/keyboard.svg";
+import analysis from "../../../../assets/analysis.svg";
 import flow from "../../../../assets/flow.svg";
 
 const Wrapper = styled.div`
@@ -48,20 +44,20 @@ const background = [
       subtitle: "Provide cargo and vessel details.",
     },
   },
+  {
+    front: {
+      title: "1000+",
+      subtitle: "tables from 6 main live systems are linked together.",
+    },
+  },
 ];
 
 const techStack = [
   {
     front: {
-      image: dataiku,
-      title: "Dataiku",
-    },
-  },
-  {
-    front: {
-      image: powerapps,
+      image: adf,
       imgSm: true,
-      title: "Microsoft Power Apps",
+      title: "Azure Data Factory",
     },
   },
   {
@@ -77,22 +73,22 @@ const role = [
   {
     width: 2,
     front: {
-      image: keyboard,
+      image: analysis,
       imgSm: true,
-      title: "PowerApps Developer.",
+      title: "Data Analysis and Modelling.",
     },
     back: {
-      body: "I designed and developed a centralised system to collect figures from bp global trading teams, where each team has their tailor-made pages. All done by myself!",
+      body: "Our technical team held discussions with other teams to analysis the live data, fetching useful data and draw the relationship between systems.",
     },
   },
   {
     front: {
       image: flow,
       imgSm: true,
-      title: "Automation Flow.",
+      title: "Data Curation (Ongoing)",
     },
     back: {
-      body: "Analyse the original inconsistently formatted spreadsheets, curate the data to produce useful datasets and reports.",
+      body: "With the useful data fetched from analysis, we will curate the data with ETL (Extract, Transform, Load) technique on Azure Data Factory and develop a PowerBI dashboard.",
     },
   },
 ];
@@ -102,7 +98,7 @@ const feedback = [
     width: 3,
     front: {
       title: <div>""</div>,
-      subtitle: <div align="right">- Jakub Janowiak, Data Scientist</div>,
+      subtitle: <div align="right">- Medhi Tantaoui, Data Scientist</div>,
     },
   },
 ];
@@ -138,13 +134,13 @@ export const EoW = () => {
             </div>
           </div>
         }
-        body={
-          <div>
-            <Fade bottom>
-              <MacBookWrapper image={traderBonus} width="50%" centered />
-            </Fade>
-          </div>
-        }
+        // body={
+        //   <div>
+        //     <Fade bottom>
+        //       <MacBookWrapper image={traderBonus} width="50%" centered />
+        //     </Fade>
+        //   </div>
+        // }
       />
 
       <div id="content">
@@ -157,7 +153,7 @@ export const EoW = () => {
               Project Details.
             </div>
           }
-          subtitle="Whole new area to me!"
+          subtitle="My current project!"
           body={<FlipCardGroupThree cards={background} />}
         />
 
@@ -183,7 +179,7 @@ export const EoW = () => {
               My Role.
             </div>
           }
-          subtitle="Lots of developing work here!"
+          subtitle=""
           body={<FlipCardGroupThree cards={role} />}
         />
 

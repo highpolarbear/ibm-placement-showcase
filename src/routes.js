@@ -21,6 +21,16 @@ const TraderBonus = React.lazy(() =>
 
 const EoW = React.lazy(() => import("./components/pages/projects/eow/eow"));
 
+const Hs2 = React.lazy(() =>
+  import("./components/pages/outside-projects/hs2/hs2")
+);
+
+const RemoteEngagement = React.lazy(() =>
+  import(
+    "./components/pages/outside-projects/remote-engagement/remote-engagement"
+  )
+);
+
 // const Test = React.lazy(() => import("./components/pages/test/test"));
 
 const history = createBrowserHistory();
@@ -40,6 +50,12 @@ const Routes = () => {
           />
           <Route path="/projects/trader-bonus" exact component={TraderBonus} />
           <Route path="/projects/eow" exact component={EoW} />
+          <Route path="/outside-projects/hs2-hackathon" exact component={Hs2} />
+          <Route
+            path="/outside-projects/remote-engagement"
+            exact
+            component={RemoteEngagement}
+          />
           <Route path="/" component={Homepage} />
         </Switch>
       </Router>

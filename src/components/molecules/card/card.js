@@ -80,7 +80,9 @@ const FlipCardOuterWrapper = styled.div`
 `;
 
 const FlipCardWrapper = styled.div`
-  height: 40vh;
+  height: calc(
+    40vh ${(props) => (props.height ? "+ " + props.height + "vh" : "")}
+  );
   width: calc(100% - 6rem);
   background-color: ${cssValues.colours.white};
   padding: 3rem;

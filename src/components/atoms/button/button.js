@@ -79,6 +79,7 @@ const BtnNoRadius = styled.button`
 const LinkStyledBtn = styled(Link)`
   border-radius: 0.25rem;
   letter-spacing: 0.075rem;
+  margin-right: 1rem;
   color: ${(props) => (props.theme ? props.theme : cssValues.colours.white)};
   font-size: 1.25rem;
   &:hover ${Arrow} {

@@ -73,23 +73,25 @@ const TitleSideWrapper = styled(TitleWrapper)`
 `;
 
 export const WrapperWithTitleBlock = (props) => {
-  const { id, theme, title, subtitle, body } = props;
+  const { id, theme, title, subtitle, body, backdropTheme } = props;
   return (
-    <Wrapper id={id}>
-      <Fade effect="fadeInLeft">
-        <TitleWrapper>
-          <SectionTitle theme={theme}>{title && title}</SectionTitle>
-          {subtitle && (
-            <div>
-              <Padding1Rem />
-              <SectionSubtitle>{subtitle}</SectionSubtitle>
-            </div>
-          )}
-          <Padding3Rem />
-        </TitleWrapper>
-      </Fade>
-      {body}
-    </Wrapper>
+    <FullWidthWrapper theme={backdropTheme}>
+      <Wrapper id={id}>
+        <Fade effect="fadeInLeft">
+          <TitleWrapper>
+            <SectionTitle theme={theme}>{title && title}</SectionTitle>
+            {subtitle && (
+              <div>
+                <Padding1Rem />
+                <SectionSubtitle>{subtitle}</SectionSubtitle>
+              </div>
+            )}
+            <Padding3Rem />
+          </TitleWrapper>
+        </Fade>
+        {body}
+      </Wrapper>
+    </FullWidthWrapper>
   );
 };
 
@@ -147,8 +149,24 @@ export const WrapperWithTitleBlockSide = (props) => {
   );
 };
 
+export const WrapperBlockSide = (props) => {
+  const { id, text, body, backdropTheme } = props;
+
+  return (
+    <FullWidthWrapper id={id} theme={backdropTheme}>
+      <FullWidthInnerSideWrapper>
+        <Fade effect="fadeInLeft">
+          <SectionTitleCenter>{text}</SectionTitleCenter>
+        </Fade>
+        {body}
+      </FullWidthInnerSideWrapper>
+    </FullWidthWrapper>
+  );
+};
+
 export const RoundWrapper = (props) => {
   const { id, body } = props;
+  console.log(body);
   return (
     <Fade bottom>
       <RoundCornerWrapper id={id}>{body}</RoundCornerWrapper>

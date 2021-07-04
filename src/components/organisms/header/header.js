@@ -42,32 +42,34 @@ const MenuItem = styled.div`
 
 export const Header = () => {
   const history = useHistory();
-  const [isProject, setIsProject] = useState(false);
-  const [isOtherProj, setIsOtherProj] = useState(false);
-  const [isReflection, setIsReflection] = useState(false);
+  // const [isProject, setIsProject] = useState(false);
+  // const [isOtherProj, setIsOtherProj] = useState(false);
+  // const [isReflection, setIsReflection] = useState(false);
+  const [path, setPath] = useState(null);
   useEffect(() => {
-    const path = window.location.pathname.split("/")[1];
-    switch (path) {
-      case "projects":
-        setIsProject(true);
-        setIsOtherProj(false);
-        setIsReflection(false);
-        break;
-      case "other":
-        setIsProject(false);
-        setIsOtherProj(true);
-        setIsReflection(false);
-        break;
-      case "reflection":
-        setIsProject(false);
-        setIsOtherProj(false);
-        setIsReflection(true);
-        break;
-      default:
-        setIsProject(false);
-        setIsOtherProj(false);
-        setIsReflection(false);
-    }
+    const pathname = window.location.pathname.split("/")[1];
+    // switch (path) {
+    //   case "projects":
+    //     setIsProject(true);
+    //     setIsOtherProj(false);
+    //     setIsReflection(false);
+    //     break;
+    //   case "other":
+    //     setIsProject(false);
+    //     setIsOtherProj(true);
+    //     setIsReflection(false);
+    //     break;
+    //   case "reflection":
+    //     setIsProject(false);
+    //     setIsOtherProj(false);
+    //     setIsReflection(true);
+    //     break;
+    //   default:
+    //     setIsProject(false);
+    //     setIsOtherProj(false);
+    //     setIsReflection(false);
+    // }
+    setPath(pathname);
   }, []);
 
   return (
@@ -90,7 +92,7 @@ export const Header = () => {
                       })
                     : history.push("/#projects");
                 }}
-                active={isProject}
+                active={path === "projects"}
               />
             </MenuItem>
             <MenuItem>
@@ -105,7 +107,7 @@ export const Header = () => {
                       })
                     : history.push("/#projects");
                 }}
-                active={isOtherProj}
+                active={path === "other"}
               />
             </MenuItem>
             <MenuItem>
@@ -120,7 +122,7 @@ export const Header = () => {
                       })
                     : history.push("/#reflection");
                 }}
-                active={isReflection}
+                active={path === "reflection"}
               />
             </MenuItem>
           </MenuGroup>

@@ -162,6 +162,13 @@ export const BpPulse = () => {
                   });
                 }}
               />
+              <ButtonBlkOnClick
+                text="Visit"
+                theme={cssValues.colours.black}
+                onClick={() => {
+                  window.open("https://bppulse.co.uk");
+                }}
+              />
             </div>
           </div>
         }
