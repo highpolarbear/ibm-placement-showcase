@@ -9,7 +9,7 @@ import {
 } from "../../organisms/wrapper/contentWrapper";
 import { FullWidthBannerDark } from "../../organisms/wrapper/banner";
 import { BannerText } from "../../atoms/text/text";
-import { InlineImg } from "../../atoms/image/image";
+import { InlineImg, TinyImg } from "../../atoms/image/image";
 import { Bullet } from "../../molecules/bullet/bullet";
 import human from "../../../assets/human.svg";
 import responsibility from "../../../assets/responsibility.svg";
@@ -20,6 +20,7 @@ import growth from "../../../assets/growth.svg";
 import network from "../../../assets/network.svg";
 import remote from "../../../assets/remote.svg";
 import ibmLogo from "../../../assets/ibmlogo.png";
+import external from "../../../assets/external.svg";
 
 const Wrapper = styled.div`
   background-color: ${cssValues.colours.grey};
@@ -101,7 +102,8 @@ export const RoundUp = () => {
                             window.open("https://mahjong.gavvv.com");
                           }}
                         >
-                          personal growth
+                          <TinyImg src={external} />
+                          personal projects
                         </Link>
                         .
                       </div>
@@ -109,13 +111,13 @@ export const RoundUp = () => {
                   />,
                   <Bullet
                     img={network}
-                    title="Network"
+                    title="Networking"
                     subtitle="I met lots of great mentors."
                   />,
                   <Bullet
                     img={remote}
                     title="Working in Remote"
-                    subtitle="Things are more difficult in this way. :("
+                    subtitle="All projects were delivered in remote!"
                   />,
                 ]}
               />

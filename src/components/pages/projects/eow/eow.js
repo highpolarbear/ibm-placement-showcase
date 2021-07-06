@@ -97,7 +97,12 @@ const feedback = [
   {
     width: 3,
     front: {
-      title: <div>""</div>,
+      title: (
+        <div>
+          "You've shown outstanding motivation and efficiency in all tasks
+          assigned to you."
+        </div>
+      ),
       subtitle: <div align="right">- Medhi Tantaoui, Data Scientist</div>,
     },
   },
@@ -163,7 +168,7 @@ export const EoW = () => {
           title={
             <div>
               <BannerImg src={stack} alt="Stack" />
-              Tech Stack / Ways to Work.
+              Tech Stack
             </div>
           }
           subtitle="Using the latest technology available in the industry."

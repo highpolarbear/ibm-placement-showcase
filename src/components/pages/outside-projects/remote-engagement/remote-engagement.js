@@ -74,9 +74,17 @@ const techStack = [
 
 const feedback = [
   {
+    height: 10,
     width: 3,
     front: {
-      title: <div>"TBC"</div>,
+      title: (
+        <div>
+          "He has been quick in responding to change, adopted a pro-active
+          approach to work and brought new ideas to the table. We relied on Gav
+          as the front + back-end SME for the remote engagement project and he
+          has far exceeded our expectations."
+        </div>
+      ),
       subtitle: <div align="right">- Sophie Blank, Service Designer</div>,
     },
   },

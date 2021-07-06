@@ -167,8 +167,10 @@ export const VideoHeader = () => {
           <fade effect="fadeInBottom">
             <SubtitleWrapper>
               <SectionSubtitleLg>
-                It is <UnderlineText>way beyond</UnderlineText> what I have
-                expected.
+                understanding the{" "}
+                <UnderlineText>latest technology</UnderlineText> and delivering{" "}
+                <UnderlineText>success and values</UnderlineText> to clients and
+                IBM.
               </SectionSubtitleLg>
             </SubtitleWrapper>
           </fade>

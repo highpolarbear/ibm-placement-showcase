@@ -205,7 +205,7 @@ export const BpPulse = () => {
           title={
             <div>
               <BannerImg src={stack} alt="Stack" />
-              Tech Stack / Ways to Work.
+              Tech Stack / Ways of Working.
             </div>
           }
           subtitle="Using the latest technology available in the industry."

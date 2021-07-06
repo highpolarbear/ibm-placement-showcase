@@ -101,7 +101,13 @@ const feedback = [
   {
     width: 3,
     front: {
-      title: <div>""</div>,
+      title: (
+        <div>
+          "You worked independently to develop the PowerApp front-end for the
+          users to interact with when inputting data. [...] You also set-up the
+          integration with Sharepoint [and] PowerApp greatly improved the UX."
+        </div>
+      ),
       subtitle: <div align="right">- Jakub Janowiak, Data Scientist</div>,
     },
   },
@@ -167,7 +173,7 @@ export const TraderBonus = () => {
           title={
             <div>
               <BannerImg src={stack} alt="Stack" />
-              Tech Stack / Ways to Work.
+              Tech Stack / Ways of Working.
             </div>
           }
           subtitle="Using the latest technology available in the industry."

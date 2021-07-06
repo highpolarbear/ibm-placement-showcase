@@ -36,3 +36,9 @@ export const DisplayImg = styled.img`
   position: relative;
   user-select: none;
 `;
+
+export const TinyImg = styled.img`
+  max-height: 0.75rem;
+  margin: 0 0.2rem 0 0.25rem;
+  transform: translate(0, -20%);
+`;
