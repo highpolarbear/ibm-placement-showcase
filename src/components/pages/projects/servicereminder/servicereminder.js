@@ -82,7 +82,7 @@ const techStack = [
     front: {
       image: agile,
       imgSm: true,
-      title: "Agile (ish)",
+      title: "Agile",
     },
   },
 ];

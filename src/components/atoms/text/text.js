@@ -30,7 +30,7 @@ export const SectionSubtitle = styled.div`
 `;
 
 export const SectionSubtitleLg = styled(SectionSubtitle)`
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: light;
   @media (max-width: ${cssValues.width.mobileLimit}) {
     font-size: 2rem;

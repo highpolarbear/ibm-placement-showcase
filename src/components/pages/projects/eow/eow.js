@@ -124,7 +124,7 @@ export const EoW = () => {
         title="bp Energy on Water"
         subtitle={
           <div>
-            Automate the calculation of bp traders' annual bonuses.
+            Provide a timely view of current vessels on water with bp cargo.
             <div align="center">
               <ButtonBlkOnClick
                 text="Explore"
